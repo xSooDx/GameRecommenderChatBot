@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SPARS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bot.css') }}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bot.js') }}"></script>
+    
+  </head>
+  
+  <body class="body-css">
+    <div class="container">
+      <div class="col-md-3"></div>
+      <div id="chat_main" class="col-md-6 botui-app-container">
+            
+      </div>
+      <div class="chat-md-3"></div>
+    </div>
+  </body>
+  <script>
+    spars.start('chat_main')
+  </script>
+</html>

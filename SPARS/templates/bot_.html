@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+        <head>
+            <title>SPARS</title>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bot.css') }}"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+            <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+            <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+            <script src="{{ url_for('static', filename='js/bot.js') }}"></script>
+        </head>
+        
+        <body class="body-css">
+            <div class="container" style="text-align:center">
+                
+            <div id="home-demo" class="botui-app-container" style="width:100%">
+                <div class="botui botui-container" id="main" >
+                    <div class="botui-messages-container" id="one">
+                            <div class="botui-message">
+                                <div class="botui-message-content text">
+                                    <center> <span>Hello {{session['name']}}, I'm SPARS!</span> </center>
+                                </div>
+                            </div>
+                            <div class="botui-message">
+                                <div class="botui-message-content text">
+                                    <center><span>Please tell me your name to get started?</span> </center>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="botui-actions-container">
+                        <div class="">
+                            <div class="botui-actions-buttons">
+                                <center>
+                                    <input type="text" name="usrname" id="usrname" class="bot-inp"/>
+                                    <button type="button" onclick="nameLoad()" autofocus="autofocus" class="btn-warning bot-btn"> Enter </button>
+                                    
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botui-messages-container" style="visibility:hidden" id="containerOne">
+                        <div class="botui-message">
+                            <div class="botui-message-content text">
+                                <center><span id="stepOne">So <i></i>, you like games?</span> </center>
+                            </div>
+                        </div>
+                        <div class="botui-message">
+                            
+                        </div>
+                    </div>
+                    <div class="botui-actions-container" style="visibility:hidden" id="containerTwo">
+                        <div class="">
+                            <div class="botui-actions-buttons">
+                                <center>
+                                    <button type="button" onclick="gameType()" autofocus="autofocus" class="btn-warning bot-btn"> Yes, Love them! </button>
+                                    <button type="button" onclick="bye()" autofocus="autofocus" class="btn-warning bot-btn"> No, not really. </button>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botui-messages-container" style="visibility:hidden" id="containerThree">
+                        <div class="botui-message">
+                            <div class="botui-message-content text">
+                                <center><span id="stepTwo">Tell me something about the type of games you would like to play?</span> </center>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="botui-actions-container" style="visibility:hidden" id="containerFour">
+                        <div class="">
+                            <div class="botui-actions-buttons" >
+                                <center>
+                                    <input type="text" name="gametype" id="gametype"/>
+                                    <button type="button" onclick="submitGameType()" autofocus="autofocus" class="btn-warning bot-btn"> Enter </button>
+                                    
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botui-messages-container" style="visibility:hidden" id="containerFive">
+                        <div class="botui-message">
+                            <div class="botui-message-content text">
+                                <center><span>Which were some of the last few games you played?</span> </center>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="botui-actions-container" style="visibility:hidden" id="containerSix">
+                        <div class="">
+                            <div class="botui-actions-buttons">
+                                <center>
+                                    <input type="text" name="game1" id="game1"/>
+                                    <input type="text" name="game2" id="game2"/>
+                                    <input type="text" name="game3" id="game3"/>
+                                    <button type="button" onclick="gameNames()" autofocus="autofocus" class="btn-warning bot-btn"> Move next? </button>
+                                    
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="botui-messages-container" style="visibility:hidden" id="containerSeven">
+                        <div class="botui-message">
+                            <div class="botui-message-content text">
+                                <center><span></span> </center>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+          </div>
+        </body>
+        
+</html>
+
+

@@ -1,0 +1,86 @@
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>SPARS</title>
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="text-align:center">
+      <h1 style="font-size:48px"> S.P.A.R.S </h1>
+      <h4> A video game recommendation chat-bot</h2>
+      </div>
+    </div>
+    
+    <div class="row">
+      {% block notice %}
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        {% endblock %}
+
+        {% block body %}
+        {%endblock%}
+    </div>
+    
+    <div class="row">
+    <div class="col-md-6">
+      <form class="panel panel-primary" action="/login" method="post">
+        <div class="panel-heading">Login</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" class="form-control" id="username", name="username" >
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" name="password">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form> 
+    </div>
+    <div class="col-md-6">
+      <form class="panel panel-default" action="/register" method="post">
+        <div class="panel-heading">Register</div>
+        <div class="panel-body">
+          <div class="form-group">
+            <label for="rusername">Username:</label>
+            <input type="text" class="form-control" id="rusername" name="username">
+          </div>
+          <div class="form-group">
+            <label for="rpwd">Password:</label>
+            <input type="password" class="form-control" id="rpwd" name="password">
+          </div>
+          <div class="form-group">
+            <label for="rname">Nick Name:</label>
+            <input type="text" class="form-control" id="rname" name="name">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+      </form> 
+    </div>
+    </div>
+  </div>
+
+</body>

@@ -1,0 +1,36 @@
+products_all.jl:
+  List of every game in the database with attribute values
+
+prod_meta.dat: 
+  Contains metadata about the data
+  In line order:
+    1)Attributes(columns for the games)
+    2)All possible Genres values
+    3)All possible Spec values
+    4)All possible Tag values
+    5)All possible publisher names
+    6)All possible developer names
+    7)All possible game names
+    8)All possible game IDs (can be ignored)
+    
+prod_index.dat:
+  The reverse index linking keywords to game index, all stemmed
+  In line order:
+    1)Tags, Specs & Genres Index - Links game tags and genres to game index
+    2)Name Index - links keywords present in game names to game index
+    3)Dev Index - links keywords present in game developer names to game index
+    4)Pub Index - links keywords present in game publisher names to game index
+    
+prod_keys.dat:
+  List of all keywords, split and stemmed from data values
+  In line order:
+    1)Tag, Spec & genre Keywords
+    2)Name Keywords
+    3)Developer Keywords
+    4)Publisher Keywords
+        
+prod_similar.dat:
+  List of the top 10most similar games for each game
+  
+
+   
