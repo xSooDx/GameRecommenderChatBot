@@ -1,4 +1,5 @@
 import json
+from os import error
 from pprint import pprint
 import sys
 import MySQLdb
@@ -13,7 +14,7 @@ def connect():
         user="spars",
         passwd="123456",
         db="spars",
-        charset='utf8',
+        charset='utf8mb4',
     )
     c = conn.cursor(MySQLdb.cursors.DictCursor)
 
@@ -51,8 +52,12 @@ for i in data:
                 cnt=cnt+1
             
             
-            
-        c.execute("INSERT into product(discount_price,specs,metascore,price,title,publisher,id,sentiment,developer,release_date,app_name,tags,url,reviews_url,genres) VALUES("+str(l2[0])+","+str(l2[1])+","+str(l2[2])+","+str(l2[3])+","+str(l2[4])+","+str(l2[5])+","+str(l2[6])+","+str(l2[7])+","+str(l2[8])+","+str(l2[9])+","+str(l2[10])+","+str(l2[11])+","+str(l2[12])+","+str(l2[13])+","+str(l2[14])+")")
+        try:
+            c.execute("INSERT into product(discount_price,specs,metascore,price,title,publisher,id,sentiment,developer,release_date,app_name,tags,url,reviews_url,genres) VALUES("+str(l2[0])+","+str(l2[1])+","+str(l2[2])+","+str(l2[3])+","+str(l2[4])+","+str(l2[5])+","+str(l2[6])+","+str(l2[7])+","+str(l2[8])+","+str(l2[9])+","+str(l2[10])+","+str(l2[11])+","+str(l2[12])+","+str(l2[13])+","+str(l2[14])+")")
+        except error:
+            print(error)
+            print(l2[4])
+            exit()
 
         
 conn.commit()

@@ -34,7 +34,7 @@ def getSimilar():
 def getLastSuggestion():
    up = spu.getUserProfile(session['userid'])
    if len(up['searches'])==0:
-    return 0
+    return "0"
    return jsonify(sp.getProductFromID(up['searches'][0]))
    
 @app.route('/get/recos', methods=['GET'])

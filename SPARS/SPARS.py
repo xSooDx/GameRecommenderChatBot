@@ -87,7 +87,12 @@ def matchName(name):
   name= ""
   for i in fin:
     c.execute(q2.format(i))
-    _n = c.fetchone()['app_name']
+    try:
+      _n = c.fetchone()['app_name']
+    except error:
+      print(error)
+      print(i)
+      exit()
     score = matchScore(_n,kw)
     if score > name_score:
       name_score = score

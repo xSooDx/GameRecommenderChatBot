@@ -1,3 +1,5 @@
+import sys
+sys.path.append('../SPARS')
 import json
 from nltk.stem import PorterStemmer
 from nltk.tokenize import RegexpTokenizer
